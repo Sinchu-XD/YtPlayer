@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // ⚠️ Replace this with your VPS backend URL:
-  const backendURL = "http://YOUR_VPS_IP:8000";
+  const backendURL = "http://103.25.175.233:8000";
 
   const handleSearch = async () => {
     if (!query.trim()) return;
