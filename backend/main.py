@@ -1,16 +1,19 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-import asyncio
-from YouTubeMusic.Search import Search
 import uvicorn
-import os
+from YouTubeMusic.Search import Search
 
 app = FastAPI()
 
-# ✅ CORS allow Netlify domain
+# ✅ Allow only your Netlify frontend to access the API
+origins = [
+    "https://effulgent-crumble-9f243c.netlify.app",  # your frontend domain
+    "https://*.netlify.app",  # (optional) allow any Netlify preview
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For testing, can later limit to Netlify domain
+    allow_origins=origins,        # only allow frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
