@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // ⚠️ Replace this with your VPS backend URL:
-  const backendURL = "http://103.25.175.233:8080";
+  const API_URL = import.meta.env.VITE_API_URL || "https://buyer-die-supervision-veterans.trycloudflare.com";
 
   const handleSearch = async () => {
     if (!query.trim()) return;
