@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // ✅ Correct backend URL variable name
-  const API_URL = import.meta.env.VITE_API_URL || "https://buyer-die-supervision-veterans.trycloudflare.com";
+  const API_URL = import.meta.env.VITE_API_URL || "https://external-executives-britannica-drama.trycloudflare.com";
 
   const handleSearch = async () => {
     if (!query.trim()) return;
