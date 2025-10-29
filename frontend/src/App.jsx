@@ -7,14 +7,15 @@ function App() {
   const [selected, setSelected] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // ⚠️ Replace this with your VPS backend URL:
+  // ✅ Correct backend URL variable name
   const API_URL = import.meta.env.VITE_API_URL || "https://buyer-die-supervision-veterans.trycloudflare.com";
 
   const handleSearch = async () => {
     if (!query.trim()) return;
     setLoading(true);
     try {
-      const res = await axios.get(`${backendURL}/search`, {
+      // ✅ Fixed variable name (was backendURL before)
+      const res = await axios.get(`${API_URL}/search`, {
         params: { query },
       });
       if (res.data.status) setResults(res.data.data);
